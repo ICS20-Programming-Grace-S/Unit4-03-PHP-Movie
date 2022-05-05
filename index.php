@@ -35,7 +35,7 @@
     <!-- Buttons and Text Field -->
     <br>
     <form method= "post">
-      Enter your age to find what movie you are allowed to watch: <input type="number" step="any" name="Age">
+      Enter your age to find what movie you are allowed to watch: <input type="number" step="1" min="0" name="Age">
       <br>
       <br>
       <input type="submit" name="submit" value="Display" />
@@ -43,14 +43,15 @@
     <br>
     <br>
 
+    <!-- Define Constants -->
     <?php
       if(isset($_POST['submit'])) {
-        
+
         define("MIN_R", 18);
         define("MIN_PG_13", 13);
         define("MIN_G", 10);
         $Age = ($_POST['Age']);
-    
+
       if ($Age >= 0) {
         if ($Age == 0) {
           echo " Oops looks like you can't input zero. ";
